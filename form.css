@@ -9,6 +9,7 @@ body, html {
     /* Other styles remain unchanged */
     position: relative; /* Ensure the hero bar can contain absolutely positioned elements */
     background-color: #1e293b; /* Assuming bg-slate-950 translates to this color */
+    height: 128px; /* Set the height of the hero bar */
 }
 
 .hero-bar::before {
