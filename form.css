@@ -1,0 +1,254 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f8f8f8; /* Assuming a light gray background */
+}
+
+/* Hero Bar Styles */
+.hero-bar {
+    background-color: #000;
+    width: 100%;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /* Adjust as needed for your logo */
+}
+
+.logo {
+    height: 60%; /* Adjust the size of your logo as needed */
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+    width: 100%;
+    height: 5px;
+    background-color: #ccc; /* Light grey background for the progress bar */
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 5px;
+    background-color: #AC8C66; /* Use your progress color */
+    width: 0%; /* Initial state of the progress bar */
+}
+
+/* Rest of your form CSS goes here */
+
+
+#multistep-form {
+    max-width: 600px; /* Fixed max-width for larger screens */
+    margin: 50px auto; /* More margin on the top and bottom */
+    text-align: center;
+    background: #ffffff; /* White background for the form */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    padding: 40px; /* Padding around the form area */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+.form-step {
+    display: none; /* Hide all steps by default */
+}
+
+.form-step.active-step {
+    display: block; /* Only show the active step */
+}
+
+button {
+    padding: 15px 30px; /* Larger buttons */
+    margin: 20px 10px; /* More space between buttons */
+    border: none; /* Remove default border */
+    background-color: #AC8C66; /* A green background */
+    color: white; /* White text */
+    font-size: 16px; /* Slightly larger font size */
+    border-radius: 4px; /* Rounded button edges */
+    cursor: pointer; /* Cursor to indicate it's clickable */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: #000000; /* Darker shade on hover */
+}
+
+input[type="submit"] {
+    background-color: #f0ad4e; /* Bootstrap's btn-warning color */
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ec971f; /* Darker shade on hover */
+}
+
+/* Additional styles for other elements like input fields */
+input[type="text"], input[type="email"], textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Comfortable padding inside the inputs */
+    margin: 10px 0; /* Margin for spacing out elements */
+    border-radius: 4px; /* Consistent border-radius */
+    border: 1px solid #ccc; /* Light grey border */
+    font-size: 16px; /* Matching font size */
+}
+
+/* Styling for labels or other text elements */
+h2 {
+    color: #333; /* Dark grey color for headings */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+/* Styles for choice buttons with images */
+.choice-button {
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 4px;
+    background: none;
+    padding: 0;
+    margin-bottom: 20px; /* Space below each button */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choice-button:hover {
+    background-color: #AC8C66; /* Slightly darker on hover */
+}
+
+/* ... Previous styles ... */
+
+.choice-container {
+    margin: 20px 0;
+}
+
+.choice-button:hover img {
+    transform: scale(1.05); /* Scale the image up on hover */
+}
+.choice-button:focus {
+    border-color: #AC8C66; /* Highlight color on hover/focus */
+}
+
+/* Effect on image click - shrink and then grow */
+.choice-button:active img {
+    transition: transform 0.1s ease; /* Quicker transition for the click */
+    transform: scale(0.95); /* Shrink */
+}
+
+.choice-button img {
+    width: 100%; /* Make image fill the button */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transformation Added Box Shadow Transition */
+    /* display: block; /* Remove any inline spacing */
+    /* border-radius: 4px; /* Rounded corners for the images */
+    /* vertical-align: middle; /* Aligns the image properly within the button */
+
+}
+
+/* Using JavaScript, add a class after a delay to grow the image */
+.choice-button img.scale-normal {
+    /* Return to normal size after a delay */
+    transition-delay: 0.1s; /* Delay the transition */
+    transform: scale(1); /* Scale back to normal size */
+}
+
+.choice-button.selected {
+    border-color: #4CAF50; /* Highlight color to indicate selection */
+}
+
+
+/* ... (keep your previous CSS styles) ... */
+
+/* Styles for Step 3, which also uses image selections */
+#step-3 .services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    gap: 20px;
+    justify-items: center; /* Center items horizontally */
+}
+
+/* Styles for individual service buttons in Step 3 */
+#step-3 .services-container .choice-button {
+    width: 100%; /* Full width of the column */
+    margin: 0; /* Reset any margins from other styles */
+}
+/* Correcting the alignment issue for step 1 */
+#step-1 .choice-container {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: center; /* Center-align the buttons */
+}
+
+/* Styles for the navigation buttons container */
+.navigation-buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Space between buttons */
+}
+
+/* Styles for the Next button */
+#next-btn {
+    display: flex;
+    width: 182px;
+    height: 49px; /* Fixed height */
+    padding: 16px 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #AC8C66; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    cursor: pointer;
+    /* Other styling for font can be added here */
+}
+
+/* Styles for the Back button */
+#prev-btn {
+    display: flex;
+    width: 136px;
+    height: 49px; /* Fixed height */
+    padding: 16px 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: transparent; /* No background color */
+    color: black; /* Text color */
+    border: 1px solid #000; /* Black border */
+    cursor: pointer;
+    /* Other styling for font can be added here */
+}
+
+/* Styles to apply when hovering over the Next button */
+#next-btn:hover {
+    background: #your-hover-color; /* Darker shade or different color for hover */
+}
+
+/* Styles to apply when hovering over the Back button */
+#prev-btn:hover {
+    background: #your-hover-background-color; /* Light shade or different color for hover */
+    color: #your-hover-text-color; /* Color change for text if needed */
+}
+
+/* Ensure button text does not wrap or distort */
+button {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    #step-3 .services-container {
+        grid-template-columns: 1fr; /* Only one column on smaller screens */
+    }
+
+    .services-container .choice-button {
+        flex-basis: 100%; /* Full width on smaller screens */
+    }
+}
+
+
+

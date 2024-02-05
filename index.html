@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multistep Form</title>
+<link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+    <!-- Hero Bar -->
+<div class="hero-bar">
+    <img src="/Users/nathan/Downloads/cntrctr-form-desktop/White_Logo_350x100 1.svg" alt="Company Logo" class="logo">
+</div>
+
+<!-- Progress Bar -->
+<div class="progress-bar-container">
+    <div class="progress-bar" id="progress-bar"></div>
+</div>
+
+<!-- Rest of your form HTML goes here -->
+
+
+<div id="multistep-form">
+
+<!-- Example for Step 1: Property Type Selection -->
+<div class="form-step" id="step-1">
+    <h2>What Kind Of Property?</h2>
+    <div class="choice-container">
+        <!-- Residential Button with ID -->
+        <button type="button" class="choice-button" id="choice-Residential">
+            <img src="/Users/nathan/Downloads/cntrctr-form-desktop/step1-btn-1.svg" alt="Residential Property">
+        </button>
+        <!-- Commercial Button with ID -->
+        <button type="button" class="choice-button" id="choice-Commercial">
+            <img src="/Users/nathan/Downloads/cntrctr-form-desktop/step1-btn-2.svg" alt="Commercial Property">
+        </button>
+    </div>
+</div>
+    
+    <!-- Step 2: Zip Code -->
+    <div class="form-step" id="step-2">
+        <h2>What's Your Zip Code?</h2>
+        <input type="text" id="zip" placeholder="ZIP">
+        <button type="button" id="zip-confirm">Confirm</button>
+    </div>
+    
+    <!-- Step 3: Services Needed -->
+<div class="form-step" id="step-3">
+    <h2>What Services Do You Need?</h2>
+    <div class="services-container">
+        <!-- Each button has an image inside it now -->
+        <button type="button" class="choice-button" id="choice-kitchen-remodel">
+            <img src="/Users/nathan/Downloads/cntrctr-form-desktop/step3-btn-1.svg" alt="Kitchen Remodel">
+        </button>
+        <button type="button" class="choice-button" id="choice-bathroom-remodel">
+            <img src="/Users/nathan/Downloads/cntrctr-form-desktop/step3-btn2.svg" alt="Bathroom Remodel">
+        </button>
+        <button type="button" class="choice-button" id="choice-flooring">
+            <img src="/Users/nathan/Downloads/cntrctr-form-desktop/step3-btn3.svg" alt="Flooring">
+        </button>
+        <button type="button" class="choice-button" id="choice-painting">
+            <img src="/Users/nathan/Downloads/cntrctr-form-desktop/step3-btn4.svg" alt="Painting">
+        </button>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button type="button" id="prev-btn" onclick="prevStep()">Back</button>
+        <button type="button" id="next-btn" onclick="nextStep()">Next</button>
+    </div>
+</div>
+
+    
+<!-- Step 4: Additional Services -->
+<div class="form-step" id="step-4">
+    <h2>Any Other Services?</h2>
+    <div class="services-list">
+        <label for="drywall"><input type="checkbox" id="drywall" name="additionalServices" value="Drywall"> Drywall</label>
+        <label for="siding"><input type="checkbox" id="siding" name="additionalServices" value="Siding"> Siding</label>
+        <label for="sprinklers"><input type="checkbox" id="sprinklers" name="additionalServices" value="Sprinklers"> Sprinklers</label>
+        <label for="electrical"><input type="checkbox" id="electrical" name="additionalServices" value="Electrical"> Electrical</label>
+        <label for="driveway"><input type="checkbox" id="driveway" name="additionalServices" value="Driveway"> Driveway</label>
+        <label for="haul-away"><input type="checkbox" id="haul-away" name="additionalServices" value="Haul Away"> Haul Away</label>
+        <label for="house-cleaning"><input type="checkbox" id="house-cleaning" name="additionalServices" value="House Cleaning"> House Cleaning</label>
+        <label for="exterior-painting"><input type="checkbox" id="exterior-painting" name="additionalServices" value="Exterior Painting"> Exterior Painting</label>
+        <label for="pergola"><input type="checkbox" id="pergola" name="additionalServices" value="Pergola"> Pergola</label>
+        <label for="roofing"><input type="checkbox" id="roofing" name="additionalServices" value="Roofing"> Roofing</label>
+        <label for="concrete"><input type="checkbox" id="concrete" name="additionalServices" value="Concrete"> Concrete</label>
+        <label for="decking"><input type="checkbox" id="decking" name="additionalServices" value="Decking"> Decking</label>
+        <label for="windows"><input type="checkbox" id="windows" name="additionalServices" value="Windows"> Windows</label>
+        <label for="patios"><input type="checkbox" id="patios" name="additionalServices" value="Patios"> Patios</label>
+        <label for="doors"><input type="checkbox" id="doors" name="additionalServices" value="Doors"> Doors</label>
+        <label for="fencing"><input type="checkbox" id="fencing" name="additionalServices" value="Fencing"> Fencing</label>
+        <label for="landscaping"><input type="checkbox" id="landscaping" name="additionalServices" value="Landscaping"> Landscaping</label>
+        <label for="tree-service"><input type="checkbox" id="tree-service" name="additionalServices" value="Tree Service"> Tree Service</label>
+        <label for="yard-work"><input type="checkbox" id="yard-work" name="additionalServices" value="Yard Work"> Yard Work</label>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button type="button" id="prev-btn" onclick="prevStep()">Back</button>
+        <button type="button" id="next-btn" onclick="nextStep()">Next</button>
+    </div>
+    </div>
+</div>
+
+    
+<!-- Step 5: Budget Selection -->
+<div class="form-step" id="step-5">
+    <h2>What Is Your Budget?</h2>
+    <div class="budget-options">
+        <label for="budget-less-1k"><input type="checkbox" id="budget-less-1k" name="budget" value="Less than $1K"> Less than $1K</label>
+        <label for="budget-2_5-5k"><input type="checkbox" id="budget-2_5-5k" name="budget" value="$2.5 - $5K"> $2.5 - $5K</label>
+        <label for="budget-10-30k"><input type="checkbox" id="budget-10-30k" name="budget" value="$10K - $30K"> $10K - $30K</label>
+        <label for="budget-30-60k"><input type="checkbox" id="budget-30-60k" name="budget" value="$30K - $60K"> $30K - $60K</label>
+        <label for="budget-more-60k"><input type="checkbox" id="budget-more-60k" name="budget" value="More than $60K"> More than $60K</label>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button type="button" id="prev-btn" onclick="prevStep()">Back</button>
+        <button type="button" id="next-btn" onclick="nextStep()">Next</button>
+    </div>
+    </div>
+</div>
+
+    
+<!-- Step 6: Project Timeline -->
+<div class="form-step" id="step-6">
+    <h2>Project Timeline</h2>
+    <p>We Want The Project Finished By</p>
+    <div class="timeline-options">
+        <label for="timeline-emergency"><input type="radio" id="timeline-emergency" name="projectTimeline" value="Now! It's An Emergency"> Now! It's An Emergency</label>
+        <label for="timeline-this-week"><input type="radio" id="timeline-this-week" name="projectTimeline" value="This Week"> This Week</label>
+        <label for="timeline-next-week"><input type="radio" id="timeline-next-week" name="projectTimeline" value="Next Week"> Next Week</label>
+        <label for="timeline-2-4-weeks"><input type="radio" id="timeline-2-4-weeks" name="projectTimeline" value="2-4 Weeks"> 2-4 Weeks</label>
+        <label for="timeline-4-plus-weeks"><input type="radio" id="timeline-4-plus-weeks" name="projectTimeline" value="4+ Weeks"> 4+ Weeks</label>
+    </div>
+    
+    <!-- Note -->
+    <p>Note: Large Projects Like Remodels Will Typically Take 4+ Weeks To Complete.</p>
+    
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button type="button" id="prev-btn" onclick="prevStep()">Back</button>
+        <button type="button" id="next-btn" onclick="nextStep()">Next</button>
+    </div>
+    </div>
+</div>
+
+    
+    <!-- Step 7: Contact Info -->
+    <div class="form-step" id="step-7">
+        <h2>Contact Info</h2>
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="phone" placeholder="Phone No.">
+        <input type="text" id="address" placeholder="Street Address">
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="additional-message" placeholder="Additional Message"></textarea>
+        <div class="consent-container">
+            <input type="checkbox" id="agree-to-contact">
+            <label for="agree-to-contact">I Agree To Be Contacted</label>
+        </div>
+    </div>
+    
+    <!-- Submit Button -->
+    <button type="submit" id="submit-btn">Submit</button>
+
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>
+
