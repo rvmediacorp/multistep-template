@@ -7,6 +7,9 @@ body, html {
 
 .hero-bar {
     /* Other styles remain unchanged */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: start; /* Align items to the start (left) side of the container */
     position: relative; /* Ensure the hero bar can contain absolutely positioned elements */
     background-color: #1e293b; /* Assuming bg-slate-950 translates to this color */
     height: 128px; /* Set the height of the hero bar */
@@ -25,7 +28,10 @@ body, html {
 
 
 .logo {
-    height: 60%; /* Adjust the size of your logo as needed */
+    /* Adjust this class according to how you've defined your logo */
+    height: 50%; /* Logo takes up 50% of the hero bar's height */
+    max-height: 64px; /* 50% of 128px to ensure it doesn't exceed the container's height */
+    object-fit: contain; /* Adjust this as needed to maintain aspect ratio without cropping */
 }
 
 /* Progress Bar Container */
