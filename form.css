@@ -53,12 +53,12 @@ body, html {
 
 
 #multistep-form {
-    max-width: 600px; /* Fixed max-width for larger screens */
+    max-width: 800px; /* Fixed max-width for larger screens */
     margin: 50px auto; /* More margin on the top and bottom */
     text-align: center;
     background: #ffffff; /* White background for the form */
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow for depth */
-    padding: 40px; /* Padding around the form area */
+    padding: 30px; /* Padding around the form area */
     border-radius: 8px; /* Slightly rounded corners */
 }
 
@@ -68,6 +68,7 @@ body, html {
 
 .form-step.active-step {
     display: block; /* Only show the active step */
+    text-align: center;
 }
 
 button {
@@ -254,17 +255,129 @@ button {
     text-overflow: ellipsis;
 }
 
+/* Step 5 Budget Options Container */
+#step-5 .budget-options {
+    display: flex;
+    justify-content: center; /* Centers the children horizontally */
+    flex-wrap: wrap; /* Allow children to wrap as needed */
+    gap: 20px;
+    padding: 0 20px; /* Add padding on the sides */
+}
+
+/* Individual Selection Boxes */
+#step-5 .selection-box {
+    flex: 1 1 calc(50% - 20px); /* Adjust width calc to account for gap */
+    max-width: 275px;
+    margin-bottom: 0px; /* Margin at the bottom of each box */
+    display: flex;
+    align-items: center;
+    padding: 21px 24px;
+    border: 1px solid rgba(102, 112, 133, 0.30);
+    border-radius: 6px;
+}
+
+.selection-box {
+    width: 275px; /* Fixed width as per design */
+    border: 1px solid rgba(102, 112, 133, 0.30);
+    border-radius: 6px;
+    padding: 21px 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.selection-box label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Step 6 Timeline Options Container */
+#step-6 .timeline-options {
+    display: flex;
+    justify-content: center; /* Centers the children horizontally */
+    flex-wrap: wrap; /* Allow children to wrap as needed */
+    gap: 20px;
+    padding: 0 20px; /* Add padding on the sides */
+}
+
+/* Reusing the .selection-box class from Step 5 */
+#step-6 .selection-box {
+    flex: 1 1 calc(50% - 20px); /* Adjust width calc to account for gap */
+    max-width: 275px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    padding: 21px 24px;
+    border: 1px solid rgba(102, 112, 133, 0.30);
+    border-radius: 6px;
+    cursor: pointer;
+    /* No need to set width here as it's already defined in .selection-box */
+}
+
+#step-6 .selection-box label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.radio-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-color: transparent;
+    border: 1px solid #667085;
+}
+
+.radio-title {
+    color: #667085;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+/* Toggle the 'selected' class on the parent .selection-box when the radio is checked */
+#multistep-form .form-step .selection-box.selected {
+    border-color: #AC8C66; /* Your desired highlight color */
+}
+
+#multistep-form .form-step .selection-box.selected .radio-button {
+    background-color: #AC8C66; /* Your desired highlight color */
+}
+
+#multistep-form .form-step .selection-box.selected .radio-title {
+    color: #AC8C66; /* Your desired highlight color */
+}
+
+
+.hidden-radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
 
 /* Adjustments for Smaller Screens */
 @media (max-width: 768px) {
     #step-3 .services-container {
         grid-template-columns: 1fr; /* Only one column on smaller screens */
     }
+    #step-5 .selection-box {
+        flex-basis: 100%; /* Full width on smaller screens */
+        max-width: none; /* Removes any max-width restrictions */
+    }
+    #step-6 .selection-box {
+        flex-basis: 100%; /* Full width on smaller screens */
+    }
 
     .services-container .choice-button {
         flex-basis: 100%; /* Full width on smaller screens */
     }
+    .selection-box {
+        width: calc(100% - 48px); /* Full width minus padding */
+        margin-bottom: 20px;
+    }
 }
-
-
-

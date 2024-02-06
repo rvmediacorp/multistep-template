@@ -41,8 +41,8 @@ function updateNavigationButtons(step) {
     const backBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
-    backBtn.style.display = (step >= 3 && step <= 6) ? 'block' : 'none';
-    nextBtn.style.display = (step >= 3 && step <= 6) ? 'block' : 'none';
+    backBtn.style.display = (step > 1) ? 'block' : 'none'; // Show back button if step is greater than 1
+    nextBtn.style.display = (step < maxSteps) ? 'block' : 'none'; // Show next button if step is less than maxSteps
 }
 
 function updateProgressBar(step) {
@@ -51,33 +51,66 @@ function updateProgressBar(step) {
     progressBar.style.width = percentage + '%';
 }
 
-function selectOption(selectedOption) {
-    const button = document.getElementById(`choice-${selectedOption}`);
-    button.classList.toggle('selected'); // Toggle the 'selected' class on and off
+// Function to toggle selection for step 3
+function selectOption(element) {
+    element.classList.toggle('selected'); // Toggle the 'selected' class on and off
 }
 
-function autoAdvance(selectedOption) {
-    selectOption(selectedOption); // Highlight the selected option
-    nextStep(); // Automatically go to the next step
-}
+// ... [rest of your JavaScript code]
 
-// Initialize the form with the first THIS IS A TEST COMMENT step
+// Initialize the form with the first step
 document.addEventListener('DOMContentLoaded', function() {
     showStep(currentStep);
+
+    // Event listeners for selection boxes in step 5
+    document.querySelectorAll('#step-5 .selection-box').forEach(box => {
+        box.addEventListener('click', function(event) {
+            // Find the radio button inside the clicked selection box
+            const radio = box.querySelector('.hidden-radio');
+            // Check the radio button
+            radio.checked = true;
+            // Clear previously selected options
+            box.closest('.form-step').querySelectorAll('.selection-box').forEach(innerBox => {
+                innerBox.classList.remove('selected');
+            });
+            // Add 'selected' class to the parent .selection-box
+            box.classList.add('selected');
+        });
+    });
+
+    // Event listeners for selection boxes in step 6
+document.querySelectorAll('#step-6 .selection-box').forEach(box => {
+    box.addEventListener('click', function(event) {
+        // Find the radio button inside the clicked selection box
+        const radio = box.querySelector('.hidden-radio');
+        // Check the radio button
+        radio.checked = true;
+        // Clear previously selected options
+        box.closest('.form-step').querySelectorAll('.selection-box').forEach(innerBox => {
+            innerBox.classList.remove('selected');
+        });
+        // Add 'selected' class to the parent .selection-box
+        box.classList.add('selected');
+    });
+});
+
 
     // Attach event listeners to the choice buttons in step 1 for auto-advance
     document.querySelectorAll('#step-1 .choice-button').forEach(button => {
         button.addEventListener('click', function(event) {
+            // Auto-advance on step 1
             const selectedOption = event.currentTarget.id.replace('choice-', '');
-            autoAdvance(selectedOption);
+            document.querySelectorAll('#step-1 .choice-button').forEach(btn => btn.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            setTimeout(nextStep, 200); // Delay to show the click effect
         });
     });
 
     // Attach event listeners to the choice buttons in step 3 for multiple selections
     document.querySelectorAll('#step-3 .choice-button').forEach(button => {
         button.addEventListener('click', function(event) {
-            const selectedOption = event.currentTarget.id.replace('choice-', '');
-            selectOption(selectedOption);
+            // Allow multiple selections on step 3
+            selectOption(event.currentTarget);
         });
     });
 
@@ -87,3 +120,4 @@ document.addEventListener('DOMContentLoaded', function() {
         zipConfirmBtn.addEventListener('click', nextStep);
     }
 });
+

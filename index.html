@@ -103,18 +103,45 @@
         <button type="button" id="next-btn" onclick="nextStep()">Next</button>
     </div>
     </div>
-</div>
-
-    
-<!-- Step 5: Budget Selection -->
+    <!-- Step 5: Budget Selection -->
 <div class="form-step" id="step-5">
     <h2>What Is Your Budget?</h2>
     <div class="budget-options">
-        <label for="budget-less-1k"><input type="checkbox" id="budget-less-1k" name="budget" value="Less than $1K"> Less than $1K</label>
-        <label for="budget-2_5-5k"><input type="checkbox" id="budget-2_5-5k" name="budget" value="$2.5 - $5K"> $2.5 - $5K</label>
-        <label for="budget-10-30k"><input type="checkbox" id="budget-10-30k" name="budget" value="$10K - $30K"> $10K - $30K</label>
-        <label for="budget-30-60k"><input type="checkbox" id="budget-30-60k" name="budget" value="$30K - $60K"> $30K - $60K</label>
-        <label for="budget-more-60k"><input type="checkbox" id="budget-more-60k" name="budget" value="More than $60K"> More than $60K</label>
+        <div class="selection-box">
+            <label for="budget-less-1k" class="budget-label">
+                <input type="radio" id="budget-less-1k" name="budget" value="Less than $1K" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">Less than $1K</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="budget-2_5-5k" class="budget-label">
+                <input type="radio" id="budget-2_5-5k" name="budget" value="$2.5 - $5K" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">$2.5 - $5K</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="budget-10-30k" class="budget-label">
+                <input type="radio" id="budget-10-30k" name="budget" value="$10K - $30K" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">$10K - $30K</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="budget-30-60k" class="budget-label">
+                <input type="radio" id="budget-30-60k" name="budget" value="$30K - $60K" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">$30K - $60K</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="budget-more-60k" class="budget-label">
+                <input type="radio" id="budget-more-60k" name="budget" value="More than $60K" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">More than $60K</div>
+            </label>
+        </div>
     </div>
     
     <!-- Navigation Buttons -->
@@ -122,20 +149,48 @@
         <button type="button" id="prev-btn" onclick="prevStep()">Back</button>
         <button type="button" id="next-btn" onclick="nextStep()">Next</button>
     </div>
-    </div>
 </div>
 
-    
 <!-- Step 6: Project Timeline -->
 <div class="form-step" id="step-6">
     <h2>Project Timeline</h2>
     <p>We Want The Project Finished By</p>
     <div class="timeline-options">
-        <label for="timeline-emergency"><input type="radio" id="timeline-emergency" name="projectTimeline" value="Now! It's An Emergency"> Now! It's An Emergency</label>
-        <label for="timeline-this-week"><input type="radio" id="timeline-this-week" name="projectTimeline" value="This Week"> This Week</label>
-        <label for="timeline-next-week"><input type="radio" id="timeline-next-week" name="projectTimeline" value="Next Week"> Next Week</label>
-        <label for="timeline-2-4-weeks"><input type="radio" id="timeline-2-4-weeks" name="projectTimeline" value="2-4 Weeks"> 2-4 Weeks</label>
-        <label for="timeline-4-plus-weeks"><input type="radio" id="timeline-4-plus-weeks" name="projectTimeline" value="4+ Weeks"> 4+ Weeks</label>
+        <div class="selection-box">
+            <label for="timeline-emergency" class="timeline-label">
+                <input type="radio" id="timeline-emergency" name="projectTimeline" value="Now! It's An Emergency" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">Now! It's An Emergency</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="timeline-this-week" class="timeline-label">
+                <input type="radio" id="timeline-this-week" name="projectTimeline" value="This Week" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">This Week</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="timeline-next-week" class="timeline-label">
+                <input type="radio" id="timeline-next-week" name="projectTimeline" value="Next Week" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">Next Week</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="timeline-2-4-weeks" class="timeline-label">
+                <input type="radio" id="timeline-2-4-weeks" name="projectTimeline" value="2-4 Weeks" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">2-4 Weeks</div>
+            </label>
+        </div>
+        <div class="selection-box">
+            <label for="timeline-4-plus-weeks" class="timeline-label">
+                <input type="radio" id="timeline-4-plus-weeks" name="projectTimeline" value="4+ Weeks" class="hidden-radio">
+                <div class="radio-button"></div>
+                <div class="radio-title">4+ Weeks</div>
+            </label>
+        </div>
     </div>
     
     <!-- Note -->
@@ -146,28 +201,28 @@
         <button type="button" id="prev-btn" onclick="prevStep()">Back</button>
         <button type="button" id="next-btn" onclick="nextStep()">Next</button>
     </div>
-    </div>
 </div>
 
-    
     <!-- Step 7: Contact Info -->
-    <div class="form-step" id="step-7">
-        <h2>Contact Info</h2>
-        <input type="text" id="name" placeholder="Name">
-        <input type="text" id="phone" placeholder="Phone No.">
-        <input type="text" id="address" placeholder="Street Address">
-        <input type="email" id="email" placeholder="Email">
-        <textarea id="additional-message" placeholder="Additional Message"></textarea>
-        <div class="consent-container">
-            <input type="checkbox" id="agree-to-contact">
-            <label for="agree-to-contact">I Agree To Be Contacted</label>
-        </div>
+<div class="form-step" id="step-7">
+    <h2>Contact Info</h2>
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="phone" placeholder="Phone No.">
+    <input type="text" id="address" placeholder="Street Address">
+    <input type="email" id="email" placeholder="Email">
+    <textarea id="additional-message" placeholder="Additional Message"></textarea>
+    <div class="consent-container">
+        <input type="checkbox" id="agree-to-contact">
+        <label for="agree-to-contact">I Agree To Be Contacted</label>
     </div>
-    
-    <!-- Submit Button -->
-    <button type="submit" id="submit-btn">Submit</button>
-
 </div>
+
+<!-- Submit Button -->
+<button type="submit" id="submit-btn">Submit</button>
+    
+</div>
+
+
 
 <script src="form.js"></script>
 </body>
