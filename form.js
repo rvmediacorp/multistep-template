@@ -61,7 +61,7 @@ function autoAdvance(selectedOption) {
     nextStep(); // Automatically go to the next step
 }
 
-// Initialize the form with the first step
+// Initialize the form with the first THIS IS A TEST COMMENT step
 document.addEventListener('DOMContentLoaded', function() {
     showStep(currentStep);
 
